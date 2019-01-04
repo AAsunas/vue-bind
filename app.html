@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iview example</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="number">
+    <button v-click="onsbmit">确定</button>
+    <button v-click="addBtn">确定2</button>
+    <p v-bind="number"></p>
+</div>
+<script src="app.js"></script>
+<script>
+    new MyVue({
+        el:"#app",
+        data:{
+            number:1
+        },
+        methods:{
+            onsbmit(){
+                console.log(this);
+                //此处的this在绑定事件的时候做了指向处理，指向了data对象
+                this.number++;
+            },
+            addBtn(){
+                alert(11111)
+            }
+        }
+    })
+</script>
+</body>
+</html>
+
